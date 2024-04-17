@@ -61,9 +61,9 @@ newdiv3.addEventListener("click", (e) => {
 // заднего фона body на значение
 // из этого инпута
 let coloredInp = document.createElement("input");
-coloredInp.type = "text";
+coloredInp.type = "color";
 coloredInp.placeholder = "Введите цвет шаурмы";
-coloredInp.addEventListener("keydown", (e) => {
+coloredInp.addEventListener("change", (e) => {
   document.body.style.backgroundColor = coloredInp.value;
 });
 body.append(coloredInp);
