@@ -7,12 +7,12 @@
 // R - red;
 // G - green;
 // B - blue;
-// w - white;
+// W - white;
 // SHIFT + B - black;
 // SHIFT + G - gray;
 
 let div = document.querySelector("#colorful_div");
-document.addEventListener("keydown", (e) => {
+window.addEventListener("keydown", (e) => {
   if (e.key.toUpperCase() == "R") {
     div.style.backgroundColor = "red";
   } else if (e.key.toUpperCase() == "G") {
@@ -34,7 +34,7 @@ document.addEventListener("keydown", (e) => {
 // на кнопку выводите в консоль переменную i
 // и увеличивайте её в 2 раза;
 
-let i = 0;
+let i = 1;
 let btn = document.querySelector("#btn");
 btn.addEventListener("click", (e) => {
   console.log(i);
@@ -46,16 +46,24 @@ btn.addEventListener("click", (e) => {
 // по нажатию на неё выводите в консоль
 // позицию места куда вы нажали
 // относительно div- а;
-let newdiv3 = document.querySelector("#newDiv");
+let body = document.querySelector("body");
+let newdiv3 = document.createElement("div");
+newdiv3.style.width = "500px";
+newdiv3.style.height = "500px";
+newdiv3.style.backgroundColor = "pink";
+body.append(newdiv3);
 newdiv3.addEventListener("click", (e) => {
-  console.log(e);
+  console.log(`по "X", ${e.x}, по "Y" ${e.y}`);
 });
 // Задание №4
 // Создайте input type color.
 // При изменении инпута меняйте цвет
 // заднего фона body на значение
 // из этого инпута
-let coloredInp = document.querySelector("#coloredinp");
+let coloredInp = document.createElement("input");
+coloredInp.type = "text";
+coloredInp.placeholder = "Введите цвет шаурмы";
 coloredInp.addEventListener("keydown", (e) => {
   document.body.style.backgroundColor = coloredInp.value;
 });
+body.append(coloredInp);
